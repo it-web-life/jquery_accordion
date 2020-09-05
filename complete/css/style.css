@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+.header {
+  width: 100%;
+  background-color: #fff;
+}
+
+.heading {
+  font-size: 2rem;
+  text-align: center;
+  padding: 20px 0;
+}
+@media screen and (max-width:767px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+}
+
+.container {
+  padding: 20px 0;
+  max-width: 960px;
+  margin: 10px auto 100px;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  color: #444;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #ddd;
+  border-bottom: 1px solid #444;
+}
+.is-open.item {
+  border-bottom: none;
+}
+
+/* 開閉ボタンのプラス・マイナス ボタン */
+.toggle {
+  position: relative;
+}
+.toggle::before {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  bottom: 0;
+  width: 16px;
+  height: 1px;
+  margin: auto 0;
+  content: '';
+  transition: all .25s ease-out 0s;
+  background: #444;
+}
+.toggle::after {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  bottom: 0;
+  width: 16px;
+  height: 1px;
+  margin: auto 0;
+  content: '';
+  transition: all .25s ease-out 0s;
+  background: #444;
+  transform: rotate(90deg);
+  opacity: 1;
+}
+.is-open.toggle::before {
+  transform: rotate(180deg);
+}
+.is-open.toggle::after {
+  transform: rotate(270deg);
+  opacity: 0;
+}
+
+.content {
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+.is-open.content {
+  border-bottom: 1px solid #444;
+}
+
+.title {
+  font-size: 25px;
+  margin: 10px auto 20px;
+}
+
+.title:first-letter {
+  font-size: 40px;
+  color: #f00;
+}
+
+.box {
+  display: flex;
+}
+@media screen and (max-width:767px) {
+  .box {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
+
+.text {
+  width: 50%;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  margin: 20px 0 20px 20px;
+}
+@media screen and (max-width:767px) {
+  .text {
+    width: 100%;
+    margin: 20px auto;
+  }
+}
+
+.imageWrap {
+  width: 50%;
+}
+@media screen and (max-width:767px) {
+  .imageWrap {
+    width: 100%;
+  }
+}
+
+.image {
+  width: 100%;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+}
